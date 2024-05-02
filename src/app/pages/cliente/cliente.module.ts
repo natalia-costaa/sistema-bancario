@@ -5,12 +5,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/app/shared/material/material.module';
-import { provideNgxMask } from 'ngx-mask';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CadastroClienteComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -18,10 +21,12 @@ import { provideNgxMask } from 'ngx-mask';
     ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    NgxMaskDirective,
+    NgxMaskPipe
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [provideNgxMask()],
-  exports:[]
+  exports:[CadastroClienteComponent ]
 })
 export class ClienteModule { }
